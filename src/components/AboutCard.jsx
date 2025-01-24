@@ -2,7 +2,7 @@ const AboutCard = () => {
     return (
         <div className='flex justify-center'>
         <div className='flex flex-col-reverse items-center gap-10 md:gap-20 md:flex-row md:items-start md:w-11/12 md:justify-center'>
-            <img src='/img/model.png' alt='model' className='w-10/12 md:w-6/12 lg:w-4/12'/>
+            <img src='/img/model.png' alt='model' className='w-10/12 md:w-6/12 lg:w-4/12 rounded-md'/>
             <div className='flex flex-col gap-5 w-10/12'>
                 <h1 className='text-2xl text-center md:text-3xl lg:text-5xl md:text-left'>ABOUT AUDACIEUX ATELIER</h1>
                 <p className="card__description text-center font-light md:text-xl lg:text-2xl md:text-left">At Audacieux Atelier, we are committed to curating a collection of the
