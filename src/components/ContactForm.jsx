@@ -1,7 +1,7 @@
 const ContactForm = () => {
     return (
         <div className='flex justify-center'>
-        <div className='flex flex-col gap-5 w-11/12 md:gap-10 xl:flex-row xl:justify-between'>
+        <div className='flex flex-col gap-5 w-10/12 md:gap-10 xl:flex-row xl:justify-between md:text-lg'>
             <img src='/img/contact.png' alt='japandi living room' className='rounded-md md:object-cover md:h-80 xl:h-96 xl:w-7/12 2xl:h-[500px]'/>
             <form className="flex flex-col p-2 bg-zinc-200 rounded-md md:p-4 xl:h-96 xl:w-7/12 2xl:h-[500px]" action="#">
                 <label htmlFor="firstname">First Name</label>
