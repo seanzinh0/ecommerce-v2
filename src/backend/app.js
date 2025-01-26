@@ -21,6 +21,10 @@ app.get('/api/products', (req, res) => {
     })
 })
 
+app.get('/products', (req, res) => {
+    res.sendFile(path.join(distPath, 'index.html'));
+})
+
 const port = process.env.PORT;
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
