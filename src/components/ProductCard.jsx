@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Dropdown } from 'flowbite-react';
+import SortDropdown from './SortDropdown';
+import FilterDropdown from './FilterDropdown';
 
 function ProductCard() {
     const [products, setProducts] = useState([]);
@@ -15,9 +16,9 @@ function ProductCard() {
     }, []);
 
     const handleSort = (e) => {
-        let sorted = [...products];
+        let sorted = [...sortedProducts];
         if (e === 'featured'){
-            setSortedProducts(products);
+            setSortedProducts(sortedProducts);
             return;
         } else if (e === 'title-asc') {
             sorted.sort((a, b) => a.title.localeCompare(b.title));
@@ -31,19 +32,29 @@ function ProductCard() {
         setSortedProducts(sorted);
     }
 
+    const handleFilter = (e) => {
+        let filtered = [...products];
+        if (e === 'price-less-than-500') {
+            filtered = filtered.filter(product => product.price < 500);
+        } else if (e === 'price-less-than-1000') {
+            filtered = filtered.filter(product => product.price < 1000);
+        } else if (e === 'price-less-than-2000') {
+            filtered = filtered.filter(product => product.price < 2000);
+        } else if (e === 'price-less-than-3000') {
+            filtered = filtered.filter(product => product.price < 3000);
+        } else if (e !== 'all') {
+            filtered = filtered.filter(product => product.category === e);
+        }
+        setSortedProducts(filtered);
+    }
 
     return (
         <div className=' flex flex-col justify-center items-center'>
-            <div className='flex w-10/12 mb-10 md:mb-12'>
-                <Dropdown label="Sort by" className='bg-zinc-100' inline>
-                    <Dropdown.Item onClick={() => handleSort('featured')}>Featured</Dropdown.Item>
-                    <Dropdown.Item onClick={() => handleSort('title-asc')}>Title (A-Z)</Dropdown.Item>
-                    <Dropdown.Item onClick={() => handleSort('title-desc')}>Title (Z-A)</Dropdown.Item>
-                    <Dropdown.Item onClick={() => handleSort('price-asc')}>Price (Low to High)</Dropdown.Item>
-                    <Dropdown.Item onClick={() => handleSort('price-desc')}>Price (High to Low)</Dropdown.Item>
-                </Dropdown>
+            <div className='flex w-10/12 mb-10 md:mb-12 gap-2'>
+                <SortDropdown handleSort={handleSort} />
+                <FilterDropdown handleFilter={handleFilter} />
             </div>
-            <div className='grid md:grid-rows-6 md:grid-cols-2 w-10/12 gap-5 md:gap-10'>
+            <div className='grid md:grid-cols-2 w-10/12 gap-5 md:gap-10'>
                 {sortedProducts.map(product => (
                     <div key={product.id}
                          className="flex flex-col lg:flex-row items-center w-full hover:scale-110 hover:shadow-2xl ease-in-out transition duration-500 shadow-zinc-900 rounded-md">
