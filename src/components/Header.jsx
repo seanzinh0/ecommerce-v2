@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 
 const Header = () => {
     return (
-        <nav className='h-28 w-full flex items-center justify-center border-b-4 border-black bg-white sticky z-50'>
+        <nav className='h-28 w-full flex items-center justify-center border-b-4 border-black bg-white'>
             <ul className='flex w-11/12 sm:justify-between items-center justify-center gap-8'>
                 <Link to="/products">
                     <li className='hover:underline sm:text-lg min-[320px]:lg font-light text-center min-[320px]:w-16 min-[440px]:w-28'>Shop</li>
