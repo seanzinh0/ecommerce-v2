@@ -8,7 +8,7 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const distPath = path.join(__dirname, '../dist')
+const distPath = path.join(__dirname, '../dist/index.html')
 app.use(express.static(distPath))
 
 app.get('/api/products', (req, res) => {
@@ -18,7 +18,7 @@ app.get('/api/products', (req, res) => {
 })
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(distPath, 'index.html'));
+    res.sendFile(path.join(distPath));
 })
 
 const port = process.env.PORT;
