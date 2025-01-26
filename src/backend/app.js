@@ -8,11 +8,11 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const distPath = path.join(__dirname, 'dist')
+const distPath = path.join(__dirname, '..', '..', 'dist')
 app.use(express.static(distPath))
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(distPath));
+    res.sendFile(path.join(distPath, 'index.html'))
 })
 
 app.get('/api/products', (req, res) => {
