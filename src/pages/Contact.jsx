@@ -5,9 +5,9 @@ import ContactInfo from "../components/ContactInfo.jsx";
 const Contact = () => {
     return (
         <>
-            <h1 className='text-center text-2xl my-10 md:text-5xl md:my-20'>CONTACT US</h1>
+            <h1 className='text-center text-2xl my-10 md:text-5xl md:my-12'>CONTACT US</h1>
             <ContactForm/>
-            <div className='my-10 md:my-20'>
+            <div className='my-10 md:my-12'>
             <ContactInfo/>
             </div>
         </>
