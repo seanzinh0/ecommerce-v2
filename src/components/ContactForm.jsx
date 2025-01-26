@@ -1,4 +1,7 @@
 import {useState} from "react";
+import {Modal} from 'flowbite-react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 
 const ContactForm = () => {
     const [firstName, setFirstName] = useState('');
@@ -7,6 +10,7 @@ const ContactForm = () => {
     const [reason, setReason] = useState('');
     const [message, setMessage] = useState('');
     const [errors, setErrors] = useState('');
+    const [showModal, setShowModal] = useState(false);
 
     const validateForm = () => {
         const newErrors = {};
@@ -27,6 +31,8 @@ const ContactForm = () => {
             setEmail('');
             setReason('');
             setMessage('');
+            setShowModal(true);
+            setTimeout(() => {setShowModal(false)}, 3250)
         }
     }
 
@@ -96,6 +102,16 @@ const ContactForm = () => {
                     </button>
                 </form>
             </div>
+            <Modal show={showModal} onClose={() => setShowModal(false)}>
+                <Modal.Header />
+                <Modal.Body>
+                    <DotLottieReact
+                        src="https://lottie.host/c3ca1e26-6cde-4ecb-b5bf-0d46c5f8aeac/ExJLVVxc3k.lottie"
+                        loop
+                        autoplay
+                    />
+                </Modal.Body>
+            </Modal>
         </div>
     )
 }
