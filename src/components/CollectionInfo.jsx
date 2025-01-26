@@ -34,8 +34,8 @@ const CollectionInfo = () => {
                     <img src='/img/outfit-1.png' alt='outfit1' className='w-2/12 hidden xl:block rounded-md'/>
                     <img src='/img/outfit-2.png' alt='outfit2' className='w-5/12 sm:w-[22%] xl:w-2/12 rounded-md'/>
                     <img src='/img/outfit-3.png' alt='outfit3' className='w-5/12 sm:w-[22%] xl:w-2/12 rounded-md'/>
-                    <img src='/img/outfit-4.png' alt='outfit4' className='w-5/12 sm:w-[22%] xl:w-2/12 rounded-md'/>
-                    <img src='/img/outfit-5.png' alt='outfit5' className='w-5/12 sm:w-[22%] xl:w-2/12 rounded-md'/>
+                    <img src='/img/outfit-4.png' alt='outfit4' className='w-5/12 sm:w-[22%] xl:w-2/12 rounded-md mt-4 md:mt-0'/>
+                    <img src='/img/outfit-5.png' alt='outfit5' className='w-5/12 sm:w-[22%] xl:w-2/12 rounded-md mt-4 md:mt-0'/>
                 </div>
             </div>
         </div>
