@@ -11,14 +11,14 @@ const __dirname = dirname(__filename);
 const distPath = path.join(__dirname, '../dist/index.html')
 app.use(express.static(distPath))
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(distPath));
+})
+
 app.get('/api/products', (req, res) => {
     getProducts().then(result => {
         res.send(result)
     })
-})
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(distPath));
 })
 
 const port = process.env.PORT;
