@@ -25,6 +25,10 @@ app.get('/products', (req, res) => {
     res.sendFile(path.join(distPath, 'index.html'));
 })
 
+app.get('/contact', (req, res) => {
+    res.sendFile(path.join(distPath, 'index.html'));
+})
+
 const port = process.env.PORT;
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
