@@ -2,10 +2,13 @@ import { useState, useEffect } from 'react';
 import SortDropdown from './SortDropdown';
 import FilterDropdown from './FilterDropdown';
 
-function ProductCard() {
+// component for product cards
+const ProductCard= () => {
+    // sets state of products to be an empty array
     const [products, setProducts] = useState([]);
     const [sortedProducts, setSortedProducts] = useState([]);
 
+    // fetch data from backend api route and set products and sorted products state to data
     useEffect(() => {
         fetch('/api/products')
             .then(response => response.json())
@@ -15,7 +18,9 @@ function ProductCard() {
             });
     }, []);
 
+    // set conditionals based on what is clicked in the sort dropdown component and sets the sorted products to the array that is sorted
     const handleSort = (e) => {
+        // copy the sorted products array
         let sorted = [...sortedProducts];
         if (e === 'featured'){
             setSortedProducts(sortedProducts);
@@ -33,6 +38,7 @@ function ProductCard() {
     }
 
     const handleFilter = (e) => {
+        // copy the products array so that you filter the original data not the sorted this allows the filtered to be sorted
         let filtered = [...products];
         if (e === 'price-less-than-500') {
             filtered = filtered.filter(product => product.price < 500);
@@ -45,9 +51,12 @@ function ProductCard() {
         } else if (e !== 'all') {
             filtered = filtered.filter(product => product.category === e);
         }
+        // set the sorted products to the filtered
         setSortedProducts(filtered);
     }
 
+    // add the dropdown components and pass the functions as props to handle sortingg and filtering
+    // map the sorted products to create a card for each product
     return (
         <div className=' flex flex-col justify-center items-center'>
             <div className='flex w-10/12 mb-10 md:mb-12 gap-2'>

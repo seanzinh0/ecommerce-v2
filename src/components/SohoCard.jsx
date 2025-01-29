@@ -1,3 +1,4 @@
+// simple card to show the info about being from soho
 const SohoCard = () => {
     return (
         <div className='flex justify-center'>

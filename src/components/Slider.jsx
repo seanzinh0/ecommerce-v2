@@ -1,5 +1,6 @@
 import {Carousel} from 'flowbite-react';
 
+// use flowbite's slider to show images of brands
 const Slider = () => {
     return (
         <div className='w-11/12 h-[76px] md:h-[205px] lg:h-[300px] xl:h-[325px] 2xl:h-[400px]'>

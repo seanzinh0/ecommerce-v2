@@ -1,3 +1,4 @@
+// simple component to show info about contacting us
 const ContactInfo = () => {
     return (
         <div className='flex justify-center'>

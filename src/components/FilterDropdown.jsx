@@ -1,6 +1,7 @@
 import { Dropdown } from 'flowbite-react';
 
-function FilterDropdown({ handleFilter }) {
+// using flowbite's dropdown component that passes a handle filter function as props to handle filtering based on selections when clicked
+const FilterDropdown = ({ handleFilter }) => {
     return (
         <Dropdown label="Filter by" className='bg-zinc-100' inline>
             <Dropdown.Item onClick={() => handleFilter('all')}>All</Dropdown.Item>

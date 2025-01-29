@@ -1,3 +1,4 @@
+// card that displays and image and info about the site
 const AboutCard = () => {
     return (
         <div className='flex justify-center'>

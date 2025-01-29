@@ -1,8 +1,11 @@
 import { useState } from "react";
 
+// shows info about our collection and has images to show outfits
 const CollectionInfo = () => {
+    // set showFullText state to false
     const [showFullText, setShowFullText] = useState(false);
 
+    // when wanting to show full text toggle by using not operator
     const handleToggleShown = () => {
         setShowFullText(!showFullText);
     };
@@ -10,6 +13,7 @@ const CollectionInfo = () => {
     return (
         <div className='flex justify-center'>
             <div className='w-10/12'>
+                {/*if it is showFullText the height is set to auto otherwise the height will be limited and ... will be there along with an arrow down icon*/}
                 <p className={`lg:text-lg sm:text-sm text-xs text-center ${showFullText ? 'h-auto' : 'md:h-fit h-20 line-clamp-5 md:line-clamp-none'}`}>
                     At Audacieux Atelier, we curate a collection of cutting-edge, luxury brands that push the boundaries
                     of
@@ -27,6 +31,7 @@ const CollectionInfo = () => {
                     bold, avant-garde spirit of Audacieux Atelier, offering a carefully curated selection that balances
                     innovation, artistry, and timeless sophistication.
                 </p>
+                {/*add onClick event to toggle show full text or not using arrow icons hidden on non-mobile devices*/}
                 <div className='flex justify-center md:hidden'>
                     <button onClick={handleToggleShown}>{showFullText ? (<img src='/img/keyboard_arrow_up_16dp_666666_FILL0_wght400_GRAD0_opsz20.png' alt='read less' className='h-6'/> ) : (<img src='/img/keyboard_arrow_down_16dp_666666_FILL0_wght400_GRAD0_opsz20.png' alt='read more' className='h-6'/> )}</button>
                 </div>

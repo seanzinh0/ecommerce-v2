@@ -1,6 +1,7 @@
 import { Dropdown } from 'flowbite-react';
 
-function SortDropdown({ handleSort }) {
+// using flowbite's dropdown and handlesort function to sort products
+const SortDropdown = ({ handleSort }) => {
     return (
         <Dropdown label="Sort by" className='bg-zinc-100' inline>
             <Dropdown.Item onClick={() => handleSort('featured')}>Featured</Dropdown.Item>

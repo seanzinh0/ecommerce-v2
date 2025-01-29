@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom";
 
+// use link to link header elements to other pages
 const Header = () => {
     return (
         <nav className='h-28 w-full flex items-center justify-center border-b-4 border-black bg-white'>

@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom";
 
+// setup hero using link so that when the div is clicked it takes you to products page
 const Hero = () => {
     return (
         <>

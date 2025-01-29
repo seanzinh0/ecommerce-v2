@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom";
 
+// setup footer for website
 const Footer = () => {
     return (
         <footer className='flex justify-center w-full h-28 items-center bg-zinc-300'>

@@ -1,9 +1,10 @@
 import {useState} from "react";
 import {Modal} from 'flowbite-react';
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import {DotLottieReact} from '@lottiefiles/dotlottie-react';
 
-
+// contact form component
 const ContactForm = () => {
+    // set state for inputs
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -12,17 +13,22 @@ const ContactForm = () => {
     const [errors, setErrors] = useState('');
     const [showModal, setShowModal] = useState(false);
 
+    // function to validate form
     const validateForm = () => {
         const newErrors = {};
         if (!firstName) newErrors.firstName = "Please enter your first name";
         if (!lastName) newErrors.lastName = "Please enter your last name";
         if (!email) newErrors.email = "Please enter your email";
+        else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+            newErrors.email = "Invalid email address";
+        }
         if (!reason) newErrors.reason = "Please select a reason";
         if (!message) newErrors.message = "Please enter your message";
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     }
 
+    // when form submitted reset states back to empty and show modal for 3.25s
     const handleSubmit = (e) => {
         e.preventDefault();
         if (validateForm()) {
@@ -32,10 +38,13 @@ const ContactForm = () => {
             setReason('');
             setMessage('');
             setShowModal(true);
-            setTimeout(() => {setShowModal(false)}, 3250)
+            setTimeout(() => {
+                setShowModal(false)
+            }, 3250)
         }
     }
 
+    // render component and have onChange event to set state of inputs
     return (
         <div className='flex justify-center'>
             <div className='flex flex-col gap-5 w-10/12 md:gap-10 xl:flex-row xl:justify-between md:text-lg'>
@@ -102,8 +111,9 @@ const ContactForm = () => {
                     </button>
                 </form>
             </div>
+            {/*use flowbite's modal to display a submission success icon*/}
             <Modal show={showModal} onClose={() => setShowModal(false)}>
-                <Modal.Header />
+                <Modal.Header/>
                 <Modal.Body>
                     <DotLottieReact
                         src="https://lottie.host/c3ca1e26-6cde-4ecb-b5bf-0d46c5f8aeac/ExJLVVxc3k.lottie"
