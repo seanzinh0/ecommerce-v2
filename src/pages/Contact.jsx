@@ -2,6 +2,7 @@ import '../App.css'
 import ContactForm from "../components/ContactForm.jsx";
 import ContactInfo from "../components/ContactInfo.jsx";
 
+// contact page that consists of form and info
 const Contact = () => {
     return (
         <>

@@ -4,6 +4,7 @@ import Slider from '../components/Slider'
 import AboutCard from "../components/AboutCard.jsx";
 import SohoCard from "../components/SohoCard.jsx";
 
+// Home page with 2 cards and a slider
 const Home = () => {
     return(
         <>

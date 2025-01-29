@@ -2,6 +2,7 @@ import '../App.css'
 import CollectionInfo from "../components/CollectionInfo.jsx";
 import ProductCard from "../components/ProductCard.jsx";
 
+// product page consisting of info and a collection of product cards
 const Products = () => {
     return (
         <>
